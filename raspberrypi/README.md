@@ -1,15 +1,44 @@
-# 7-Segment Display Morphology
+# Image Download, Processing with OpenCV, and OCR using Tesseract
 
-An image capture system is required to recognize characters from a segment display for an industrial application. The display shows characters, and pre-processing using thresholding has been applied to the image to enhance information capture.
+This project demonstrates downloading an image from a URL, processing it using OpenCV for morphology operations, and performing Optical Character Recognition (OCR) using Tesseract to extract text from the image.
 
-![](./assets/input.png)
+## Requirements
 
-The pattern recognition software struggles to recognize the digits due to the separation between the segments of the display. To address this issue, a program was developed to solve the problem of pre-filtering for character recognition using morphological operations. Care was taken to keep the decimal point separate from the other digits to avoid incorrect number recognition on the display.
+- **OpenCV**: Computer vision library. Installation may vary depending on the operating system.
+- **Tesseract**: OCR engine. Installation required with support for the desired language (in the example, "digits1" is being used).
+- **CURL**: Library for data transfer via URL.
+- **CMake**: For compiling the code, if necessary.
+- **C++ Compiler**: Support for C++11 or higher.
 
-![](./assets/output.png)
+## Installation and Compilation
 
-By using another identification program, such as [Tesseract](https://github.com/ropensci/tesseract), it is possible to observe that the digits in the image are actually:
+1. **Install Dependencies**:
+   - Install OpenCV following the instructions for your operating system.
+   - Install Tesseract and the necessary training data packages (tessdata) for the desired language and configuration.
 
+2. **Compilation**:
+   ```bash
+   cd build
+   cmake ..
+   make
+   ```
+
+## Execution
+
+After successfully compiling the code:
+
+```bash
+./main
 ```
-01.5 03.0 03.7 05.9 07.9
-```
+
+This command will:
+
+- Download the image from the specified URL.
+- Process the image with morphology operations using OpenCV.
+- Perform OCR on the image to extract text using Tesseract.
+- Display the recognized text in the console and save the processed image as `output.png` in `../assets/`.
+
+### Notes
+
+- Ensure to adjust the URL (`url`) and the path to save the image (`savePath`) in the code as needed.
+- Ensure an active internet connection to download the image from the specified URL.
