@@ -93,7 +93,7 @@ void setup()
 
   WiFi.persistent(false);
   WiFi.mode(WIFI_STA);
-  WiFi.begin(wifi_ssid, wifi_pass);
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);

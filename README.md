@@ -2,8 +2,39 @@
 
 This project integrates an ESP32-CAM with a Raspberry Pi to read and interpret digital displays from a multimeter, enhancing visibility and publishing data to a broker.
 
-<!-- ![Setup Diagram](./images/setup_diagram.png)
-![Project](./images/project) -->
+|Multimeter|Device|
+|:-:|:-:|
+|![Multimeter](assets/multimeter.png)|![Device](assets/device.png)|
+
+## Execution
+
+|Input|Threshold|Corrected Orientation|
+|:-:|:-:|:-:|
+|![input](assets/input.png)|![threshold](assets/threshold.png)|![corrected_orientation](assets/corrected_orientation.png)|
+
+|Flood Fill|Corrected And Clean Orientation Image|Morphology|
+|:-:|:-:|:-:|
+|![flood_fill](assets/flood_fill.png)|![corrected_and_clean_orientation_image](assets/corrected_and_clean_orientation_image.png)|![morphology](assets/morphology.png)|
+
+```bash
+cd raspberrypi/build
+cmake ..
+make && ./main
+[100%] Built target main
+Starting image processing...
+Image saved to: ../assets/input.jpg
+Image loaded successfully.
+Applying thresholding...
+Correcting image orientation...
+Applying morphological operations...
+Morphological processing complete.
+Performing OCR...
+Tesseract initialized.
+Image set for OCR.
+OCR output: 8035
+OCR complete.
+Exiting...
+```
 
 ## Overview
 
