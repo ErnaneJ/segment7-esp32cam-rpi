@@ -7,7 +7,7 @@
 
 #define MULTIMETER_MINIMUM_VALUE 3.0
 #define MULTIMETER_MAXIMUM_VALUE 5.0
-#define ADAFRUIT_API_KEY "aio_tzfN83XqK8IvKzgQguivLV7UO4Ta"
+#define ADAFRUIT_API_KEY "ADAFRUIT_API_KEY"
 #define ADAFRUIT_URL "https://io.adafruit.com/api/v2/Ernane/feeds/segment7-esp32cam-rpi/data"
 
 bool bublishAdafruit(float value, bool debug);
