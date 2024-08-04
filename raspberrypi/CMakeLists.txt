@@ -1,21 +1,32 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(main VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.10)
+project(Segment7Esp32camRpi)
 
-# Definir o caminho para o Tesseract instalado via Homebrew
+# Define the path to Tesseract installed with Homebrew
 set(Tesseract_INCLUDE_DIRS "/opt/homebrew/include")
 set(Tesseract_LIBRARIES "/opt/homebrew/lib/libtesseract.dylib")
 
-# Encontrar o pacote OpenCV
+# Find OpenCV
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-# Incluir diretórios de inclusão do Tesseract
-include_directories(${Tesseract_INCLUDE_DIRS})
-
-# Encontrar e incluir o pacote libcurl
+# Find CURL
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIRS})
 
-# Configurar o executável e linkar com as bibliotecas necessárias
-add_executable(main main.cpp)
-target_link_libraries(main ${OpenCV_LIBS} ${Tesseract_LIBRARIES} ${CURL_LIBRARIES})
+add_executable(main
+  src/main.cpp
+  src/image_processor.cpp
+  src/ocr_processor.cpp
+  src/notifier.cpp
+  src/image_downloader.cpp
+  src/helpers.cpp
+)
+
+include_directories(${Tesseract_INCLUDE_DIRS})
+include_directories("./include")
+
+target_link_libraries(main
+  ${OpenCV_LIBS}
+  ${Tesseract_LIBRARIES}
+  ${CURL_LIBRARIES}
+)
