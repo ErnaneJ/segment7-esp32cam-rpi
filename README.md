@@ -16,9 +16,9 @@ The ESP32-CAM captures images of a multimeter's 7-segment display, serving them 
 
 ## Execution 🚀
 
-| Input | Threshold | Corrected Orientation |
-|:-:|:-:|:-:|
-|![input](assets/input.png)|![threshold](assets/threshold.png)|![corrected_orientation](assets/corrected_orientation.png)|
+| Input | Perspective | Threshold |Corrected Orientation |
+|:-:|:-:|:-:|:-:|
+|![input](assets/input.png)|![perspective](assets/perspective.png)|![threshold](assets/threshold.png)|![corrected_orientation](assets/corrected_orientation.png)|
 
 | Flood Fill | Corrected And Clean Orientation Image | Morphology |
 |:-:|:-:|:-:|
@@ -79,25 +79,13 @@ Exiting...
 
 1. Install OpenCV and Tesseract on Raspberry Pi.
 2. Clone and compile the provided Raspberry Pi image processing script.
-3. Configure the script to subscribe to ESP32-CAM's image stream and publish results to the http feed.
+3. Configure the Adafruit IO Feed with your API Key
 
 ### Running the System
 
 1. Power on ESP32-CAM and Raspberry Pi.
 2. ESP32-CAM serves images over HTTP.
 3. Raspberry Pi captures, enhances, performs OCR on images, and publishes data to the http feed.
-
-## Example Usage 🧪
-
-1. Access ESP32-CAM's image feed via `http://<ESP32-CAM_IP>/cam.jpg`.
-2. Raspberry Pi processes images and publishes interpreted data.
-3. Monitor MQTT topics for real-time readings.
-
-## Troubleshooting 🛠️
-
-- Ensure ESP32-CAM and Raspberry Pi are connected to the same network.
-- Verify correct configuration of WiFi credentials and http feed settings.
-- Check system logs and debug messages for errors.
 
 ## Report 📚
 
