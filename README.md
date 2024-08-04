@@ -1,4 +1,4 @@
-# ESP32-CAM to Raspberry Pi Digital Multimeter Reader 📸🔢🔍
+# IOT system for monitoring and notifying data from segment displays using image processing techniques 📸🔢🔍
 
 This project integrates an ESP32-CAM with a Raspberry Pi to read and interpret digital displays from a multimeter, enhancing visibility and publishing data to a feed.
 
@@ -53,39 +53,6 @@ Exiting...
 | Feed |
 |:-:|
 |[![Adafruit IO Feed](assets/feed.png)](https://io.adafruit.com/Ernane/feeds/segment7-esp32cam-rpi)|
-
-## Hardware Setup 🔧
-
-- **ESP32-CAM**: Captures images of the multimeter's display.
-- **Raspberry Pi**: Receives images from ESP32-CAM, processes them, and publishes data.
-- **Multimeter with 7-segment Display**: Source of digital readings.
-- **Internet Connection**: Required for ESP32-CAM to serve images and Raspberry Pi for data processing.
-
-## Software Requirements 🖥️
-
-- **ESP32 Arduino Library**: Required for ESP32-CAM image capture.
-- **OpenCV**: Image processing library on Raspberry Pi.
-- **Tesseract**: OCR engine for digit recognition.
-
-## Installation and Setup 🛠️
-
-### ESP32-CAM Setup
-
-1. Flash the ESP32-CAM with the provided Arduino sketch.
-2. Update WiFi credentials (`WIFI_SSID` and `WIFI_PASS`) in the code.
-3. Ensure ESP32-CAM is powered and connected to the network.
-
-### Raspberry Pi Setup
-
-1. Install OpenCV and Tesseract on Raspberry Pi.
-2. Clone and compile the provided Raspberry Pi image processing script.
-3. Configure the Adafruit IO Feed with your API Key
-
-### Running the System
-
-1. Power on ESP32-CAM and Raspberry Pi.
-2. ESP32-CAM serves images over HTTP.
-3. Raspberry Pi captures, enhances, performs OCR on images, and publishes data to the http feed.
 
 ## Report 📚
 
